@@ -1,6 +1,6 @@
-> Buka folder ini untuk bagian ini. Semua path relatif terhadap folder ini. Persiapan, troubleshooting, dan cleanup: [README utama](../README.md).
+# Lab · Schema ALP Tim
 
-# Lab · Schema ALP Tim (±35 menit, lanjut setelah kelas)
+[Persiapan](../README.md) · [Troubleshooting](../TROUBLESHOOTING.md)
 
 **Skenario.** Tim sudah punya ERD dan kamus data ALP dari sesi 21. Tim lead meminta schema Oracle yang siap dipakai sesi 23 (query laporan) dan sesi REST API: tabel sesuai ERD, relasi dan aturan data dijaga constraint, dan ada data contoh untuk demo. Hasil dinilai dengan rubrik di bawah.
 
@@ -23,12 +23,12 @@ Satu laptop per tim, schema `ALP_DEV` milik laptop itu.
 | Constraint bernama | 10 | `cek-lab.sql` | Semua constraint memakai pola `pk_`, `uq_`, `fk_`, `ck_` |
 | Aturan data | 10 | `cek-lab.sql` | Minimal 2 constraint `CHECK` atau `UNIQUE` yang bermakna bisnis |
 | Data contoh | 10 | `cek-lab.sql` | Minimal 3 baris per tabel, data simulasi, diakhiri `COMMIT` |
-| Test invalid input | 10 | Instruktur atau tim lain | Minimal 3 perintah yang ditolak, kode ORA dicatat di komentar |
-| Idempoten | 5 | Instruktur atau tim lain | File dijalankan dua kali berturut-turut (F5) tanpa error |
-| Cocok kamus data | 5 | Instruktur atau tim lain | Nama tabel, kolom, dan tipe sama dengan ERD dan kamus data tim |
+| Test invalid input | 10 | Review tim lain | Minimal 3 perintah yang ditolak, kode ORA dicatat di komentar |
+| Idempoten | 5 | Review tim lain | File dijalankan dua kali berturut-turut (F5) tanpa error |
+| Cocok kamus data | 5 | Review tim lain | Nama tabel, kolom, dan tipe sama dengan ERD dan kamus data tim |
 | **Total** | **100** | | |
 
-Skor kurang dari 60 setelah waktu kelas habis: lanjutkan setelah kelas sampai memenuhi rubrik. Tugas lanjutan tidak dikumpulkan; cek sendiri dengan `cek-lab.sql` dan daftar rubrik di atas.
+Target minimal 60 poin. Cek sendiri dengan `cek-lab.sql` dan daftar rubrik di atas.
 
 ## Bonus Lab (opsional, maks. +10)
 

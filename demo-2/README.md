@@ -1,10 +1,10 @@
-> Buka folder ini untuk bagian ini. Semua path relatif terhadap folder ini. Persiapan, troubleshooting, dan cleanup: [README utama](../README.md).
+# Demo 2 · Load Seed dan DML
 
-# Demo 2 · Load Seed dan DML (±35 menit)
+[Persiapan](../README.md) · [Troubleshooting](../TROUBLESHOOTING.md)
 
-Instruktur memperagakan `INSERT` dengan subquery FK, `UPDATE` tanpa `WHERE` lalu `ROLLBACK`, dan `COMMIT` (±12 menit). Peserta menjalankan 2.1 dan 2.2 (±23 menit).
+Jalankan 2.1 dan 2.2: muat seed, lalu latihan `INSERT`, `UPDATE`, `DELETE` dengan `COMMIT` dan `ROLLBACK`.
 
-## 2.1 Load seed (±5 menit)
+## 2.1 Load seed
 
 1. Buka `02-seed.sql` dan pasang koneksi `ALP_DEV @ FREEPDB1` (file ini belum terhubung walau `../demo-1/01-ddl.sql` sudah), lihat sekilas: `INSERT` tanpa ID (diisi identity column) dan FK yang dicari lewat kode unik, mis. `(SELECT branch_id FROM branches WHERE branch_code = 'KCP-SIM-01')`.
 2. Lihat baris `COMMIT;` di bagian bawah file.
@@ -29,7 +29,7 @@ TOTAL_SALDO
 
 Angka ini sama di semua laptop. Kalau beda, jalankan ulang 1.1, 1.4, 2.1.
 
-## 2.2 Latihan DML dengan `COMMIT` dan `ROLLBACK` (±10 menit)
+## 2.2 Latihan DML dengan `COMMIT` dan `ROLLBACK`
 
 Buka `dml-latihan.sql`, pasang koneksi. Jalankan **satu perintah sekali jalan** dengan Run Statement, urut dari atas. Setelah setiap perintah, cek hasilnya di **Query Result** atau **Script Output**.
 

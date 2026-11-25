@@ -1,14 +1,14 @@
-> Buka folder ini untuk bagian ini. Semua path relatif terhadap folder ini. Persiapan, troubleshooting, dan cleanup: [README utama](../README.md).
+# Demo 3 · Test Invalid Input
 
-# Demo 3 · Test Invalid Input (±35 menit)
+[Persiapan](../README.md) · [Troubleshooting](../TROUBLESHOOTING.md)
 
-Instruktur memperagakan anatomi pesan ORA dengan satu `INSERT` cabang dobel (±10 menit). Peserta menjalankan 3.1 dan 3.2 (±25 menit).
+Jalankan 3.1 dan 3.2: kirim data yang salah dan catat pesan ORA dari constraint.
 
-## 3.1 Baca file test invalid input (±3 menit)
+## 3.1 Baca file test invalid input
 
 Buka `invalid-inputs.sql`. Ada 6 perintah (T1–T6), masing-masing sengaja melanggar satu aturan. Tebak dulu constraint mana yang akan menolak tiap perintah.
 
-## 3.2 Jalankan dan isi tabel expected error (±12 menit)
+## 3.2 Jalankan dan isi tabel expected error
 
 1. Pasang koneksi, tekan **F5**. Run Script tetap lanjut ke perintah berikutnya walau ada error.
 2. Gulir **Script Output**. Setiap perintah menghasilkan blok `Error starting at line : ...` berisi kode `ORA-xxxxx` dan nama constraint.
