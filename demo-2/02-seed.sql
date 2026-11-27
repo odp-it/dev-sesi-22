@@ -1,5 +1,5 @@
 -- Sesi 22 · Seed data simulasi Tabungan UMKM
--- Dibangkitkan skrip generator dengan seed acak tetap, jadi isinya sama di semua laptop. Jangan diedit manual.
+-- Di-generate script generator dengan seed acak tetap, jadi isinya sama di semua laptop. Jangan diedit manual.
 -- Semua data simulasi: kode SIM, domain example.com, telepon 0800-0000-xxxx.
 -- ID tidak ditulis: diisi identity column. FK dicari lewat kode unik (subquery).
 

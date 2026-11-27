@@ -1,6 +1,6 @@
 # 22 - Oracle DDL, DML & Basic SQL
 
-Sesi ini mengubah ERD menjadi tabel Oracle sungguhan, dalam dua lapis. Di Demo 1-4, kasus Tabungan UMKM (fitur keuangan digital untuk nasabah UMKM sebuah bank fiktif) dibangun bersama: 4 tabel dengan constraint di schema `ALP_DEV`, data contoh yang sama di semua laptop, bukti bahwa constraint menolak data yang salah, dan 8 query laporan dasar. Di Lab, kelompok menerapkan hal yang sama untuk ALP-nya sendiri di repo kelompok (Tahap 2 dari 3): `db/01-ddl.sql`, `db/02-seed.sql`, `db/03-test-invalid.sql`, dan `db/00-run-all.sql`, dengan rubrik 100 poin sebagai panduan.
+Sesi ini mengubah ERD menjadi tabel Oracle, dikerjakan dalam dua bagian. Di Demo 1-4, kasus Tabungan UMKM (fitur keuangan digital untuk nasabah UMKM sebuah bank fiktif) dibangun bersama: 4 tabel dengan constraint di schema `ALP_DEV`, data contoh yang sama di semua laptop, bukti bahwa constraint menolak data yang salah, dan 8 query laporan dasar. Di Lab, kelompok menerapkan hal yang sama untuk ALP-nya sendiri di repo kelompok (Tahap 2 dari 3): `db/01-ddl.sql`, `db/02-seed.sql`, `db/03-test-invalid.sql`, dan `db/00-run-all.sql`, dengan rubrik 100 poin sebagai panduan.
 
 ## Environment & Tools
 
@@ -14,7 +14,7 @@ Sama dengan sesi 21. Tidak ada instalasi baru.
 
 Versi dicek 22 Nov 2026: Oracle AI Database 26ai Free 23.26.4.0.0 (`container-registry.oracle.com/database/free:23.26.4.0-lite`), Docker Desktop (Docker Engine 29.9.3), Oracle SQL Developer for VS Code 26.3.1.
 
-**Auto Commit mati.** Koneksi SQL Developer for VS Code dibuat dengan Auto Commit tidak dicentang (bawaan). Artinya `INSERT`, `UPDATE`, dan `DELETE` belum permanen sampai `COMMIT` dijalankan. Session lain (aplikasi, anggota kelompok lain, sesi 23) tidak melihat data yang belum di-commit.
+**Auto Commit mati.** Koneksi SQL Developer for VS Code dibuat dengan Auto Commit tidak dicentang (default). Artinya `INSERT`, `UPDATE`, dan `DELETE` belum permanen sampai `COMMIT` dijalankan. Session lain (aplikasi, anggota kelompok lain, sesi 23) tidak melihat data yang belum di-commit.
 
 ### Cara menjalankan SQL di VS Code
 
@@ -60,7 +60,7 @@ flowchart LR
 
 Demo = kasus Tabungan UMKM, dikerjakan sendiri-sendiri di laptop masing-masing. Lab = hal yang sama untuk tema kelompok (Perbankan, E-commerce, atau Logistik). Instruktur menayangkan contoh hasil akhir per bagian di layar; filenya tidak dibagikan.
 
-## Jembatan ke Tema Kelompok
+## Dari Demo ke Tema Kelompok
 
 Setiap jenis aturan di Demo punya padanan di tema kelompok. Pakai tabel ini untuk memilih constraint yang bermakna bagi tabel kelompok. Nama constraint di kolom tema berasal dari contoh hasil akhir tiap tema (awalan `KAS_`, `MKT_`, `KRM_`).
 
@@ -73,7 +73,7 @@ Setiap jenis aturan di Demo punya padanan di tema kelompok. Pakai tabel ini untu
 | `CHECK` lintas kolom | `ck_accounts_closed` (Tantangan tambahan Demo 1) | `ck_kas_app_users_umkm` (pemilik wajib punya UMKM) | `ck_mkt_app_users_owner` | `ck_krm_shipments_delivered` (`TERKIRIM` wajib punya waktu diterima) |
 | Pengguna + role | - | `ck_kas_app_users_role`: `ADMIN`, `PEMILIK`, `STAF` | `ck_mkt_app_users_role`: `ADMIN`, `PENJUAL`, `PEMBELI` | `ck_krm_app_users_role`: `ADMIN`, `PETUGAS`, `KURIR` |
 
-Tabel pengguna + role (`<awalan>_APP_USERS`) wajib ada di setiap kelompok: `username` UNIQUE, `password_hash`, `role` dengan `CHECK` daftar nilai, dan FK ke entity pemilik akun (boleh kosong untuk `ADMIN`). Dipakai untuk login dan JWT di sesi 34.
+Tabel user + role (`<awalan>_APP_USERS`) wajib ada di setiap kelompok: `username` UNIQUE, `password_hash`, `role` dengan `CHECK` daftar nilai, dan FK ke entity pemilik akun (boleh kosong untuk `ADMIN`). Dipakai untuk login dan JWT di sesi 34.
 
 ## Struktur Repo
 

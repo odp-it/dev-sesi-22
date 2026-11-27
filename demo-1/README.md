@@ -9,7 +9,7 @@ Kerjakan 1.1-1.4 dari starter `01-ddl.sql`: buat tabel beserta constraint-nya.
 1. Buka `00-reset.sql`, pasang koneksi `ALP_DEV @ FREEPDB1` (**Attach Connection**; tiap file `.sql` baru dipasangi koneksi sendiri, kalau lupa muncul `Error: No session associated with the current worksheet`). Kalau VS Code menanyakan `Do you trust the authors of the files in this folder?`, pilih **Trust Folder & Continue**; sebelum itu tombol Run belum aktif.
 2. Tekan **F5**.
 
-Yang harus terlihat di **Script Output**: baris `Table ... dropped.` lalu `SISA_TABEL` bernilai `0`. Skrip ini aman dijalankan kapan saja, termasuk saat tabel belum ada.
+Yang harus terlihat di **Script Output**: baris `Table ... dropped.` lalu `SISA_TABEL` bernilai `0`. Script ini aman dijalankan kapan saja, termasuk saat tabel belum ada.
 
 ## 1.2 Lengkapi constraint di `01-ddl.sql`
 

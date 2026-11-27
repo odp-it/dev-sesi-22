@@ -29,4 +29,4 @@ Pesan ORA di sini **expected**: test invalid input berhasil kalau Oracle menolak
 
 ## Tantangan tambahan Demo 3 (opsional)
 
-Rancang tiga test invalid input baru untuk `transactions` dan `accounts` yang belum ada di `invalid-inputs.sql`. Untuk tiap test tulis kode ORA yang diharapkan sebelum menjalankannya, lalu bandingkan.
+Rancang tiga test invalid input baru untuk `transactions` dan `accounts` yang belum ada di `invalid-inputs.sql`. Untuk tiap test tulis kode ORA yang seharusnya muncul sebelum menjalankannya, lalu bandingkan.

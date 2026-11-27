@@ -44,4 +44,4 @@ Buka `dml-latihan.sql`, pasang koneksi. Jalankan **satu perintah sekali jalan** 
 
 ## Tantangan tambahan Demo 2 (opsional)
 
-Satu setoran sama dengan dua perubahan: baris baru di `transactions` dan saldo `accounts` bertambah. Dalam satu unit kerja, `INSERT` transaksi `SETOR` sebesar 500.000 untuk rekening `SIM-1000001` (ref `REF-SIM-900001`) lalu `UPDATE` saldo rekening yang sama. Tampilkan jumlah transaksi dan saldo sebelum dan sesudah `ROLLBACK`.
+Satu setoran sama dengan dua perubahan: baris baru di `transactions` dan saldo `accounts` bertambah. Dalam satu transaksi database, `INSERT` transaksi `SETOR` sebesar 500.000 untuk rekening `SIM-1000001` (ref `REF-SIM-900001`) lalu `UPDATE` saldo rekening yang sama. Tampilkan jumlah transaksi dan saldo sebelum dan sesudah `ROLLBACK`.

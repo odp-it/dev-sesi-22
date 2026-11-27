@@ -13,13 +13,13 @@ Langkah (kelompok):
 
    - Awalan tabel kelompok (2-4 huruf, mis. `GRD_`), supaya tidak bentrok dengan tabel Tabungan UMKM.
 
-   - `DROP ... IF EXISTS` (view, lalu tabel anak → induk) dan `CREATE TABLE` (induk → anak), constraint bernama `pk_`, `uq_`, `fk_`, `ck_` (lihat Jembatan ke Tema Kelompok).
+   - `DROP ... IF EXISTS` (view, lalu tabel child → parent) dan `CREATE TABLE` (parent → child), constraint bernama `pk_`, `uq_`, `fk_`, `ck_` (lihat Dari Demo ke Tema Kelompok).
 
-   - Tabel pengguna + role `<awalan>_APP_USERS` dengan `CHECK` daftar role.
+   - Tabel user + role `<awalan>_APP_USERS` dengan `CHECK` daftar role.
 
    - `COMMENT ON TABLE` satu kalimat untuk setiap tabel.
 
-3. Tulis `db/02-seed.sql`: minimal 3 baris per tabel, data simulasi (kode berpenanda `SIM`, email `example.com`), `password_hash` berisi teks penanda seperti `HASH-SIMULASI-BUKAN-PASSWORD`, diakhiri `COMMIT`. Sisakan satu data induk yang sengaja belum punya pasangan (akun belum dipakai, produk belum pernah dipesan, kurir belum ditugaskan); dipakai laporan di sesi 23.
+3. Tulis `db/02-seed.sql`: minimal 3 baris per tabel, data simulasi (kode berpenanda `SIM`, email `example.com`), `password_hash` berisi teks penanda seperti `HASH-SIMULASI-BUKAN-PASSWORD`, diakhiri `COMMIT`. Sisakan satu data parent yang sengaja belum punya pasangan (akun belum dipakai, produk belum pernah dipesan, kurir belum ditugaskan); dipakai laporan di sesi 23.
 4. Tulis `db/03-test-invalid.sql`: minimal 3 perintah yang harus ditolak, kode ORA dan nama constraint ditulis di komentar atas perintahnya. File ini tidak dipanggil `00-run-all.sql`.
 5. Lengkapi `db/00-run-all.sql`: pemanggilan `@@01`, `@@02`, `@@04`, `@@05`, `@@07` sudah ada di template (`03` dan `06` sengaja tidak dipanggil; file yang belum diisi aman dipanggil); tambahkan query ringkasan jumlah baris tiap tabel. Jalankan dengan **F5** **dua kali berturut-turut** tanpa error.
 6. Buka `cek-lab.sql` sesi 22 (folder `lab` di repo `dev-sesi-22`, atau folder `challenge` di ZIP lab sesi 22), ganti awalan di baris `DEFINE awalan = 'GRD'`, pasang koneksi, tekan **F5**. Perbaiki sampai skor otomatis minimal 48 dari 80. File ini tidak perlu disalin ke repo kelompok.
@@ -38,7 +38,7 @@ flowchart TB
   run["00-run-all.sql · F5"]
   run -->|1| f01["../demo-1/01-ddl.sql<br/>tabel + constraint"]
   run -->|2| f02["../demo-2/02-seed.sql<br/>data contoh"]
-  run -->|3| f04["04-data-uji.sql<br/>data uji"]
+  run -->|3| f04["04-test-data.sql<br/>test data"]
   run -->|4| f05["05-laporan.sql<br/>4 view"]
   run -->|5| f07["07-index.sql<br/>index"]
   subgraph sendiri["Dijalankan sendiri, tidak lewat 00-run-all.sql"]
