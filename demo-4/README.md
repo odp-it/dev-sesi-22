@@ -2,9 +2,9 @@
 
 [Persiapan](../README.md) · [Troubleshooting](../TROUBLESHOOTING.md)
 
-Kerjakan Q2–Q8: `WHERE`, `NULL`, urutan, aggregate, `GROUP BY`, dan `HAVING`.
+Kerjakan Q2-Q8: `WHERE`, `NULL`, urutan, aggregate, `GROUP BY`, dan `HAVING`.
 
-Buka `03-queries.sql`, pasang koneksi. Q1 sudah dijawab sebagai contoh. Untuk Q2–Q8:
+Buka `03-queries.sql`, pasang koneksi. Q1 sudah dijawab sebagai contoh. Untuk Q2-Q8:
 
 1. Tulis query di baris kosong di bawah soal.
 2. Jalankan dengan Run Statement.

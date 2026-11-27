@@ -11,7 +11,7 @@ Langkah (kelompok):
 1. `git pull` di repo kelompok. Buka `docs/kamus-data.md` dan `docs/erd.drawio.png` (sudah diperbaiki sesuai `docs/review.md`).
 2. Tulis `db/01-ddl.sql` dari kamus data. File template `db/01-ddl.sql` sudah berisi pola dan komentar petunjuk.
 
-   - Awalan tabel kelompok (2–4 huruf, mis. `GRD_`), supaya tidak bentrok dengan tabel Tabungan UMKM.
+   - Awalan tabel kelompok (2-4 huruf, mis. `GRD_`), supaya tidak bentrok dengan tabel Tabungan UMKM.
 
    - `DROP ... IF EXISTS` (view, lalu tabel anak → induk) dan `CREATE TABLE` (induk → anak), constraint bernama `pk_`, `uq_`, `fk_`, `ck_` (lihat Jembatan ke Tema Kelompok).
 
@@ -25,7 +25,39 @@ Langkah (kelompok):
 6. Buka `cek-lab.sql` sesi 22 (folder `lab` di repo `dev-sesi-22`, atau folder `challenge` di ZIP lab sesi 22), ganti awalan di baris `DEFINE awalan = 'GRD'`, pasang koneksi, tekan **F5**. Perbaiki sampai skor otomatis minimal 48 dari 80. File ini tidak perlu disalin ke repo kelompok.
 7. Isi bagian **Aturan data penting** di `README.md` repo (minimal 3 aturan: aturan, nama constraint, alasan bisnis). Commit dan push.
 
-**Target malam hari 1.** Di kelas ±35 menit cukup untuk kerangka `db/01-ddl.sql`. Yang belum selesai dirampungkan malam ini: `db/01`–`03` lengkap, `00-run-all.sql` jalan dua kali tanpa error di laptop setiap anggota, `cek-lab.sql` minimal 48 dari 80, README bagian masalah, fitur MVP, dan aturan data penting. Besok pagi (sesi 23) kelompok melanjutkan dari repo yang sama ke `db/04`–`07`.
+Struktur `db/` di repo kelompok (oranye = diisi di Lab 22, biru = menyusul di sesi 23):
+
+```mermaid
+---
+config:
+  look: classic
+  flowchart:
+    wrappingWidth: 260
+---
+flowchart TB
+  run["00-run-all.sql · F5"]
+  run -->|1| f01["../demo-1/01-ddl.sql<br/>tabel + constraint"]
+  run -->|2| f02["../demo-2/02-seed.sql<br/>data contoh"]
+  run -->|3| f04["04-data-uji.sql<br/>data uji"]
+  run -->|4| f05["05-laporan.sql<br/>4 view"]
+  run -->|5| f07["07-index.sql<br/>index"]
+  subgraph sendiri["Dijalankan sendiri, tidak lewat 00-run-all.sql"]
+    f03["03-test-invalid.sql<br/>harus ditolak"]
+    f06["06-transaksi.sql<br/>COMMIT dan ROLLBACK"]
+  end
+  f04 ~~~ sendiri
+  style sendiri fill:#EEF3FA,stroke:#1C4587,color:#1B3868
+  style run fill:#F06634,color:#fff,stroke:#F06634
+  style f01 fill:#F06634,color:#fff,stroke:#F06634
+  style f02 fill:#F06634,color:#fff,stroke:#F06634
+  style f04 fill:#1C4587,color:#fff,stroke:#1C4587
+  style f05 fill:#1C4587,color:#fff,stroke:#1C4587
+  style f07 fill:#1C4587,color:#fff,stroke:#1C4587
+  style f03 fill:#F06634,color:#fff,stroke:#F06634
+  style f06 fill:#1C4587,color:#fff,stroke:#1C4587
+```
+
+**Target malam hari 1.** Di kelas ±35 menit cukup untuk kerangka `db/01-ddl.sql`. Yang belum selesai dirampungkan malam ini: `db/01` sampai `03` lengkap, `00-run-all.sql` jalan dua kali tanpa error di laptop setiap anggota, `cek-lab.sql` minimal 48 dari 80, README bagian masalah, fitur MVP, dan aturan data penting. Besok pagi (sesi 23) kelompok melanjutkan dari repo yang sama ke `db/04` sampai `07`.
 
 ## Rubrik Lab (100 poin)
 

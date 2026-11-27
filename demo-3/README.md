@@ -6,7 +6,7 @@ Jalankan 3.1 dan 3.2: kirim data yang salah dan catat pesan ORA dari constraint.
 
 ## 3.1 Baca file test invalid input
 
-Buka `invalid-inputs.sql`. Ada 6 perintah (T1–T6), masing-masing sengaja melanggar satu aturan. Tebak dulu constraint mana yang akan menolak tiap perintah.
+Buka `invalid-inputs.sql`. Ada 6 perintah (T1-T6), masing-masing sengaja melanggar satu aturan. Tebak dulu constraint mana yang akan menolak tiap perintah.
 
 ## 3.2 Jalankan dan isi tabel expected error
 

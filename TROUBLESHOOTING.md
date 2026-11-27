@@ -5,7 +5,7 @@
 | Masalah / Error | Penyebab | Solusi |
 | --- | --- | --- |
 | `Error: No session associated with the current worksheet`, atau Run belum aktif | File `.sql` belum dipasangi koneksi, atau folder belum di-Trust | **Attach Connection** di tiap file; **Trust Folder & Continue** |
-| Container `Exited (255)` setelah laptop dimatikan | Container ikut berhenti | `docker start oracle-alp`, tunggu `(healthy)` (±15–40 detik), lanjut |
+| Container `Exited (255)` setelah laptop dimatikan | Container ikut berhenti | `docker start oracle-alp`, tunggu `(healthy)` (±15-40 detik), lanjut |
 | `ORA-00955: name is already used by an existing object` saat F5 di `demo-1/01-ddl.sql` | Tabel sudah ada dari percobaan sebelumnya | Jalankan `demo-1/00-reset.sql`, lalu `demo-1/01-ddl.sql` lagi |
 | `ORA-03075: unexpected item CONSTRAINT in an out-of-line constraint` di `CREATE TABLE` | Koma hilang setelah baris PK (atau antar constraint) | Tambahkan koma di akhir baris sebelumnya |
 | `ORA-03078: unexpected right parenthesis after ,` (disertai `ORA-00931: missing identifier`) | Ada koma di baris constraint terakhir sebelum `);` | Hapus koma terakhir |

@@ -2,7 +2,7 @@
 
 [Persiapan](../README.md) · [Troubleshooting](../TROUBLESHOOTING.md)
 
-Kerjakan 1.1–1.4 dari starter `01-ddl.sql`: buat tabel beserta constraint-nya.
+Kerjakan 1.1-1.4 dari starter `01-ddl.sql`: buat tabel beserta constraint-nya.
 
 ## 1.1 Mulai dari kosong
 
