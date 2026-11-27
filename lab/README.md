@@ -9,7 +9,7 @@
 Langkah (kelompok):
 
 1. `git pull` di repo kelompok. Buka `docs/kamus-data.md` dan `docs/erd.drawio.png` (sudah diperbaiki sesuai `docs/review.md`).
-2. Tulis `db/01-ddl.sql` dari kamus data. File template `db/01-ddl.sql` sudah berisi pola dan komentar petunjuk; gantikan `ddl-alp-tim.sql` yang lama.
+2. Tulis `db/01-ddl.sql` dari kamus data. File template `db/01-ddl.sql` sudah berisi pola dan komentar petunjuk.
 
    - Awalan tabel kelompok (2–4 huruf, mis. `GRD_`), supaya tidak bentrok dengan tabel Tabungan UMKM.
 
@@ -21,8 +21,8 @@ Langkah (kelompok):
 
 3. Tulis `db/02-seed.sql`: minimal 3 baris per tabel, data simulasi (kode berpenanda `SIM`, email `example.com`), `password_hash` berisi teks penanda seperti `HASH-SIMULASI-BUKAN-PASSWORD`, diakhiri `COMMIT`. Sisakan satu data induk yang sengaja belum punya pasangan (akun belum dipakai, produk belum pernah dipesan, kurir belum ditugaskan); dipakai laporan di sesi 23.
 4. Tulis `db/03-test-invalid.sql`: minimal 3 perintah yang harus ditolak, kode ORA dan nama constraint ditulis di komentar atas perintahnya. File ini tidak dipanggil `00-run-all.sql`.
-5. Lengkapi `db/00-run-all.sql`: pemanggilan `@@01` sampai `@@07` sudah ada di template (file yang belum diisi aman dipanggil); tambahkan query ringkasan jumlah baris tiap tabel. Jalankan dengan **F5** **dua kali berturut-turut** tanpa error.
-6. Jalankan `cek-lab.sql` dengan awalan kelompok (ganti `DEFINE awalan = 'GRD'`, pasang koneksi, **F5**). Perbaiki sampai skor otomatis puas.
+5. Lengkapi `db/00-run-all.sql`: pemanggilan `@@01`, `@@02`, `@@04`, `@@05`, `@@07` sudah ada di template (`03` dan `06` sengaja tidak dipanggil; file yang belum diisi aman dipanggil); tambahkan query ringkasan jumlah baris tiap tabel. Jalankan dengan **F5** **dua kali berturut-turut** tanpa error.
+6. Buka `cek-lab.sql` sesi 22 (folder `lab` di repo `dev-sesi-22`, atau folder `challenge` di ZIP lab sesi 22), ganti awalan di baris `DEFINE awalan = 'GRD'`, pasang koneksi, tekan **F5**. Perbaiki sampai skor otomatis minimal 48 dari 80. File ini tidak perlu disalin ke repo kelompok.
 7. Isi bagian **Aturan data penting** di `README.md` repo (minimal 3 aturan: aturan, nama constraint, alasan bisnis). Commit dan push.
 
 **Target malam hari 1.** Di kelas ±35 menit cukup untuk kerangka `db/01-ddl.sql`. Yang belum selesai dirampungkan malam ini: `db/01`–`03` lengkap, `00-run-all.sql` jalan dua kali tanpa error di laptop setiap anggota, `cek-lab.sql` minimal 48 dari 80, README bagian masalah, fitur MVP, dan aturan data penting. Besok pagi (sesi 23) kelompok melanjutkan dari repo yang sama ke `db/04`–`07`.
