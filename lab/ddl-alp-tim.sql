@@ -1,3 +1,5 @@
+-- CATATAN: file ini digantikan template repo kelompok (db/01-ddl.sql, db/02-seed.sql, db/03-test-invalid.sql,
+-- db/00-run-all.sql). Untuk Lab sesi 22 tulis DDL di repo kelompok; file ini dipertahankan hanya untuk kompatibilitas.
 -- Sesi 22 · Lab: DDL ALP tim (dinilai rubrik 100 poin; cek otomatis: cek-lab.sql)
 -- Salin file ini menjadi ddl-alp-<nama-tim>.sql, lalu isi dari ERD tim sesi 21.
 -- Jalankan di schema ALP_DEV dengan Run Script (F5). Nama tabel ALP diberi awalan tim

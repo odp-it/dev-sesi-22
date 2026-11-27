@@ -17,5 +17,9 @@
 | `ORA-00937: not a single-group group function` | Ada aggregate (`COUNT`, `SUM`) dan kolom biasa di `SELECT`, tapi tanpa `GROUP BY` | Tambahkan `GROUP BY <kolom biasa>` |
 | `ORA-00979: "STATUS": must appear in the GROUP BY clause or be used in an aggregate function` | Kolom di `SELECT` tidak ada di `GROUP BY` | Tambahkan kolom itu ke `GROUP BY` |
 | Q2 menghasilkan 0 baris tanpa error | Memakai `phone = NULL` (perbandingan dengan NULL tidak pernah benar) | Pakai `phone IS NULL` |
-| `lab/cek-lab.sql` menampilkan `0 tabel` | Awalan di `DEFINE awalan` tidak sama dengan awalan tabel, atau DDL tim belum dijalankan | Samakan awalan (huruf besar, tanpa garis bawah), jalankan DDL tim dulu |
+| `lab/cek-lab.sql` menampilkan `0 tabel` | Awalan di `DEFINE awalan` tidak sama dengan awalan tabel, atau DDL kelompok belum dijalankan | Samakan awalan (huruf besar, tanpa garis bawah), jalankan `00-run-all.sql` dulu |
+| `00-run-all.sql` kedua kali error `ORA-00955` | `demo-1/01-ddl.sql` belum menghapus semua objek lama (ada tabel yang tidak di-`DROP`, atau urutan drop salah) | Tambahkan `DROP TABLE IF EXISTS ... PURGE` untuk semua tabel, urut anak → induk |
+| `00-run-all.sql` error `ORA-02291` di seed | Urutan `INSERT` tidak mengikuti induk → anak, atau kode induk di subquery salah ketik | Urutkan seed induk dulu; samakan kode di subquery |
+| `03-test-invalid.sql` menghasilkan `1 row created.` | Constraint yang diuji belum ada di `demo-1/01-ddl.sql` | Tambahkan constraint, jalankan `00-run-all.sql` lagi |
+| `git pull` bentrok di `db/01-ddl.sql` | Dua anggota mengedit file yang sama | Satu driver per file; selesaikan konflik, jalankan `00-run-all.sql` ulang |
 | `No connection attached` / query tidak jalan | File belum dipasangi koneksi | Klik status bar, pilih `ALP_DEV @ FREEPDB1` |
